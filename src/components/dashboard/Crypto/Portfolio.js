@@ -1,62 +1,63 @@
 import React from "react";
 import Widget from "components/Widget/index";
 import { Button, Divider, Card, Col, Row, Table } from "antd";
-import Icon from '@ant-design/icons';
+import Icon from "@ant-design/icons";
 
 const Portfolio = () => {
   const columns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      render: text => <span className="gx-link">{text}</span>,
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      render: (text) => <span className="gx-link">{text}</span>,
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: "Age",
+      dataIndex: "age",
+      key: "age",
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
     },
     {
-      title: 'Action',
-      key: 'action',
-      render: (text, record) => (
-        <span>
-          <span className="gx-link">Action 一 {record.name}</span>
-          <Divider type="vertical" />
-          <span className="gx-link">Delete</span>
-          <Divider type="vertical" />
-          <span className="gx-link ant-dropdown-link">
-            More actions <Icon type="down" />
-          </span>
-        </span>
-      ),
-    }
+      title: "Action",
+      key: "action",
+      dataIndex: "action",
+    },
   ];
 
   const data = [
     {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
+      key: "1",
+      name: "Within 10 Seconds",
+      age: 5049,
+      address: "7d:21h:8m",
+      action: "48.33",
     },
     {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
+      key: "2",
+      name: "Within 11 to 20 Seconds",
+      age: 544,
+      address: "1d:0h:50m",
+      action: "5.21",
     },
     {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    }
+      key: "3",
+      name: "Within 21 to 40 Seconds",
+      age: 919,
+      address: "1d:15h:25m",
+      action: "8.8",
+    },
+    ,
+    {
+      key: "3",
+      name: "More Than 40 Seconds",
+      age: 3933,
+      address: "7d:7h:30m",
+      action: ".33",
+    },
   ];
   return (
     <Widget>
@@ -64,7 +65,11 @@ const Portfolio = () => {
       <Row>
         <Col lg={24} md={12} sm={12} xs={24}>
           {/* <Card title="Simple Table"> */}
-          <Table className="gx-table-responsive" columns={columns} dataSource={data} />
+          <Table
+            className="gx-table-responsive"
+            columns={columns}
+            dataSource={data}
+          />
           {/* </Card> */}
         </Col>
       </Row>

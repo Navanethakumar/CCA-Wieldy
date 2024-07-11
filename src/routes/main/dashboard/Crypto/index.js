@@ -31,7 +31,7 @@ const Crypto = () => {
       <Row>
         <Col xl={6} lg={12} md={12} sm={12} xs={24}>
           <ChartCard
-            prize="$9,626"
+            prize="10445"
             title="23"
             icon="bitcoin"
             children={
@@ -68,7 +68,7 @@ const Crypto = () => {
         </Col>
         <Col xl={6} lg={12} md={12} sm={12} xs={24}>
           <ChartCard
-            prize="$7,831"
+            prize="9427 (90.25%)"
             title="07"
             icon="etherium"
             children={
@@ -106,7 +106,7 @@ const Crypto = () => {
         </Col>
         <Col xl={6} lg={12} md={12} sm={12} xs={24}>
           <ChartCard
-            prize="$1,239"
+            prize="3442 (32.95%)"
             title="08"
             icon="ripple"
             children={
@@ -143,7 +143,7 @@ const Crypto = () => {
         </Col>
         <Col xl={6} lg={12} md={12} sm={12} xs={24}>
           <ChartCard
-            prize="$849"
+            prize="3541 (33.9%)"
             title="47"
             icon="litcoin"
             children={

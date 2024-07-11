@@ -62,7 +62,7 @@ const CryptoNews = () => {
         {/* <Row>
           <Col span={24}> */}
         {/* <Card className="gx-card" title="Smoothed Line Chart"> */}
-        <div className="gx-ml-auto">
+        {/* <div className="gx-ml-auto">
           <Select
             className="gx-mb-2 gx-select-sm"
             defaultValue="10"
@@ -72,7 +72,7 @@ const CryptoNews = () => {
             <Option value="20">Last 20 days</Option>
             <Option value="30">Last 30 days</Option>
           </Select>
-        </div>
+        </div> */}
         <ResponsiveContainer width="100%" height={280}>
           <AreaChart
             data={data}
@@ -107,7 +107,7 @@ const CryptoNews = () => {
       ) : (
         news.map((data, index) => <CryptoNewsItem key={index} data={data} />)
       )} */}
-    </Widget >
+    </Widget>
   );
 };
 

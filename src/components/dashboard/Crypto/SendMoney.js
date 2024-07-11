@@ -4,70 +4,54 @@ import Widget from "components/Widget/index";
 
 const columns = [
   {
-    title: "Account Holder Name",
-    dataIndex: "image",
-    render: (text, record) => {
-      return (
-        <div className="gx-flex-row gx-align-items-center">
-          <img
-            className="gx-rounded-circle gx-size-30 gx-mr-2"
-            src={text}
-            alt=""
-          />
-          <p className="gx-mb-0">{record.name}</p>
-        </div>
-      );
-    },
+    title: "Agent Name",
+    dataIndex: "name",
+    key: "name",
+    render: (text) => <span className="gx-link">{text}</span>,
   },
   {
-    title: "Last Transfer",
-    dataIndex: "transfer",
-    render: (text, record) => {
-      return <span className="gx-text-grey">{record.transfer}</span>;
-    },
+    title: "Total Call",
+    dataIndex: "age",
+    key: "age",
   },
   {
-    title: "Action",
-    dataIndex: "status",
-    render: (text) => {
-      return (
-        <span className="gx-text-primary gx-pointer">
-          <i className="icon icon-forward gx-fs-sm gx-mr-2" />
-          {text}
-        </span>
-      );
-    },
+    title: "Duration",
+    dataIndex: "address",
+    key: "address",
+  },
+  {
+    title: "Service Level%",
+    key: "action",
+    dataIndex: "action",
+  },
+  {
+    title: "FCR%",
+    key: "fcr",
+    dataIndex: "fcr",
+  },
+  {
+    title: "Avg Sentiment Score",
+    key: "Avg Sentiment Score",
+    dataIndex: "Avg Sentiment Score",
   },
 ];
 
 const data = [
   {
     key: "1",
-    name: "Jeniffer L.",
-    transfer: "2 hrs. ago",
-    image: "https://via.placeholder.com/150",
-    status: "Pay",
+    name: "Grojovin, Heather",
+    age: 1493,
+    address: "2d:3h:18m",
+    action: "7.33",
+    fcr: "85.65",
   },
   {
     key: "2",
-    name: "Jim Green",
-    transfer: "17 days ago",
-    image: "https://via.placeholder.com/150",
-    status: "Pay",
-  },
-  {
-    key: "3",
-    name: "Joe Black",
-    transfer: "1 month ago",
-    image: "https://via.placeholder.com/150",
-    status: "Pay",
-  },
-  {
-    key: "4",
-    name: "Mila Alba",
-    transfer: "1 month ago",
-    image: "https://via.placeholder.com/150",
-    status: "Pay",
+    name: "Stevens, Clint	",
+    age: 8982,
+    address: "15d:17h:35m",
+    action: "46.22",
+    fcr: "92",
   },
 ];
 
@@ -80,7 +64,11 @@ const SendMoney = () => {
         </h2>
       }
     >
-      <Table className="gx-table-responsive" columns={columns} dataSource={data} />
+      <Table
+        className="gx-table-responsive"
+        columns={columns}
+        dataSource={data}
+      />
     </Widget>
   );
 };
