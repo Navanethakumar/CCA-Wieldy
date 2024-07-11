@@ -32,7 +32,7 @@ const CryptoNews = () => {
         <h2 className="h4 gx-mb-3 gx-mb-sm-1 gx-mr-2">
           Call Volume Prediction
         </h2>
-        <div className="gx-mx-sm-2">
+        {/* <div className="gx-mx-sm-2">
           <Radio.Group
             className="gx-radio-group-link gx-radio-group-link-news"
             defaultValue={0}
@@ -54,14 +54,14 @@ const CryptoNews = () => {
         </div>
         <span className="gx-ml-2 gx-search-icon">
           <i className="icon icon-search-new gx-text-primary gx-fs-xxl gx-pointer" />
-        </span>
+        </span> */}
       </div>
 
-      {loader ? (
+      {/* {loader ? (
         <CircularProgress className="gx-loader-400" />
       ) : (
         news.map((data, index) => <CryptoNewsItem key={index} data={data} />)
-      )}
+      )} */}
     </Widget>
   );
 };
