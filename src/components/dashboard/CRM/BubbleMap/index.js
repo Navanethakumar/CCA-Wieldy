@@ -1,13 +1,14 @@
 import React from "react";
-import {ComposableMap, Geographies, Geography, Marker, ZoomableGroup} from "react-simple-maps";
-import {scaleLinear} from "d3-scale";
+import { ComposableMap, Geographies, Geography, Marker, ZoomableGroup } from "react-simple-maps";
+import { scaleLinear } from "d3-scale";
 import cities from "./static/world-most-populous-cities.json";
 import geographyData from "./static/world-50m.json";
-
+import Widget from "components/Widget/index";
 const wrapperStyles = {
   width: "100%",
   maxWidth: 980,
   margin: "0 auto",
+  // height: "25%"
 };
 
 const cityScale = scaleLinear()
@@ -15,13 +16,14 @@ const cityScale = scaleLinear()
   .range([1, 25]);
 
 const BubbleMap = () => {
-
   return (
+    // <Widget>
     <div style={wrapperStyles}>
       <ComposableMap
-        projectionConfig={{scale: 180}}
+        projectionConfig={{ scale: 180 }}
         width={980}
-        height={450}
+        height={410}
+        // center={[46.808327, -100.783737]}
         style={{
           width: "100%",
           height: "auto",
@@ -57,7 +59,7 @@ const BubbleMap = () => {
                 />
               ))}
           </Geographies>
-          {
+          {/* {
             cities.map((city, i) => (
               <Marker key={i} coordinates={city.coordinates}>
                 <circle
@@ -70,10 +72,11 @@ const BubbleMap = () => {
                 />
               </Marker>
             ))
-          }
+          } */}
         </ZoomableGroup>
       </ComposableMap>
     </div>
+    // </Widget>
   )
 };
 

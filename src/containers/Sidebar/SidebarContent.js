@@ -86,7 +86,7 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                     </span>
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="main/dashboard/crm">
+                {/* <Menu.Item key="main/dashboard/crm">
                   <Link to="/main/dashboard/crm">
                     <i className="icon icon-crm" />
                     <span>
@@ -101,7 +101,7 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                       <IntlMessages id="sidebar.dashboard.listing" />
                     </span>
                   </Link>
-                </Menu.Item>
+                </Menu.Item> */}
               </SubMenu>
 
               {/* <Menu.Item key="main/widgets">
@@ -130,10 +130,10 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                     <IntlMessages id="sidebar.layouts" />
                   </span>
                 </Link>
-              </Menu.Item> */}
+              </Menu.Item>
             </MenuItemGroup>
 
-            {/* <MenuItemGroup
+            <MenuItemGroup
               key="in-built-apps"
               className="gx-menu-group"
               title={<IntlMessages id="sidebar.inBuiltApp" />}
@@ -1417,8 +1417,8 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                     <IntlMessages id="sidebar.documents.installation" />
                   </span>
                 </Link>
-              </Menu.Item>
-            </MenuItemGroup> */}
+              </Menu.Item> */}
+            </MenuItemGroup>
           </Menu>
         </CustomScrollbars>
       </div>

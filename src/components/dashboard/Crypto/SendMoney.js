@@ -79,26 +79,8 @@ const SendMoney = () => {
           Bottom 10 agent by FCR
         </h2>
       }
-      extra={
-        <p className="gx-text-primary gx-mb-0 gx-pointer gx-d-none gx-d-sm-block">
-          <i className="icon icon-add-circle gx-fs-lg gx-d-inline-flex gx-vertical-align-middle" />{" "}
-          Add New Account
-        </p>
-      }
     >
-      <div className="gx-table-responsive">
-        <Table
-          className="gx-table-no-bordered"
-          columns={columns}
-          dataSource={data}
-          pagination={false}
-          size="small"
-        />
-      </div>
-      <p className="gx-text-primary gx-mb-0 gx-pointer gx-d-block gx-d-sm-none gx-mb-0 gx-mt-3">
-        <i className="icon icon-add-circle gx-fs-lg gx-d-inline-flex gx-vertical-align-middle" />{" "}
-        Add New Account
-      </p>
+      <Table className="gx-table-responsive" columns={columns} dataSource={data} />
     </Widget>
   );
 };
