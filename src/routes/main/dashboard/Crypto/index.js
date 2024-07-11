@@ -20,6 +20,10 @@ import CurrencyCalculator from "components/dashboard/Crypto/CurrencyCalculator";
 import CryptoNews from "components/dashboard/Crypto/CryptoNews";
 import DownloadMobileApps from "components/dashboard/Crypto/DownloadMobileApps";
 import OrderHistory from "components/dashboard/Crypto/OrderHistory";
+import { TopAnomaly } from "./TopAnomaly";
+import { BottomAnomaly } from "./BottomAnomaly";
+import { TopSplitgroup } from "../../../../components/dashboard/Crypto/TopSplitgroup";
+import { Disposition } from "../../../../components/dashboard/Crypto/Disposition";
 
 const Crypto = () => {
   return (
@@ -186,22 +190,22 @@ const Crypto = () => {
           <OrderHistory />
         </Col> */}
         <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-          <SendMoney />
+          <TopAnomaly />
         </Col>
         {/* <Col xl={6} lg={12} md={12} sm={24} xs={24}>
           <RewardCard/>
         </Col> */}
         <Col xl={12} lg={12} md={12} sm={24} xs={24}>
-          <CurrencyCalculator />
+          <BottomAnomaly />
         </Col>
         <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-          <SendMoney />
+          <TopSplitgroup />
         </Col>
         {/* <Col xl={6} lg={12} md={12} sm={24} xs={24}>
           <RewardCard/>
         </Col> */}
         <Col xl={12} lg={12} md={12} sm={24} xs={24}>
-          <CurrencyCalculator />
+          <Disposition />
         </Col>
       </Row>
     </Auxiliary>

@@ -1,12 +1,76 @@
 import React from "react";
-import { Button, Form, Input, Select } from "antd";
+import { Table } from "antd";
 import Widget from "components/Widget/index";
 
-const Option = Select.Option;
-const FormItem = Form.Item;
-
 const CurrencyCalculator = () => {
-  function handleChange(value) {}
+  const columns = [
+    {
+      title: "Account Holder Name",
+      dataIndex: "image",
+      render: (text, record) => {
+        return (
+          <div className="gx-flex-row gx-align-items-center">
+            <img
+              className="gx-rounded-circle gx-size-30 gx-mr-2"
+              src={text}
+              alt=""
+            />
+            <p className="gx-mb-0">{record.name}</p>
+          </div>
+        );
+      },
+    },
+    {
+      title: "Last Transfer",
+      dataIndex: "transfer",
+      render: (text, record) => {
+        return <span className="gx-text-grey">{record.transfer}</span>;
+      },
+    },
+    {
+      title: "Action",
+      dataIndex: "status",
+      render: (text) => {
+        return (
+          <span className="gx-text-primary gx-pointer">
+            <i className="icon icon-forward gx-fs-sm gx-mr-2" />
+            {text}
+          </span>
+        );
+      },
+    },
+  ];
+
+  const data = [
+    {
+      key: "1",
+      name: "Jeniffer L.",
+      transfer: "2 hrs. ago",
+      image: "https://via.placeholder.com/150",
+      status: "Pay",
+    },
+    {
+      key: "2",
+      name: "Jim Green",
+      transfer: "17 days ago",
+      image: "https://via.placeholder.com/150",
+      status: "Pay",
+    },
+    {
+      key: "3",
+      name: "Joe Black",
+      transfer: "1 month ago",
+      image: "https://via.placeholder.com/150",
+      status: "Pay",
+    },
+    {
+      key: "4",
+      name: "Mila Alba",
+      transfer: "1 month ago",
+      image: "https://via.placeholder.com/150",
+      status: "Pay",
+    },
+  ];
 
   return (
     <Widget
@@ -14,38 +78,7 @@ const CurrencyCalculator = () => {
         <h2 className="h4 gx-mb-0 gx-text-capitalize">Top 10 agent by FCR</h2>
       }
     >
-      <p className="gx-mb-2">1.87 BTC equals</p>
-      <h1 className="gx-mb-2 gx-text-primary gx-font-weight-medium gx-fs-xxl">
-        11466.78 USD
-      </h1>
-      <p className="gx-text-grey gx-fs-sm gx-mb-3 gx-mb-lg-4">
-        @ 1 BTC = 6718.72 USD
-      </p>
-      <Form
-        layout="inline"
-        className="gx-form-inline-label-up gx-form-inline-currency"
-      >
-        <FormItem label="From" className="gx-form-item-one-fourth">
-          <Select defaultValue="BTC" onChange={handleChange}>
-            <Option value="jack">BTC</Option>
-            <Option value="lucy">USD</Option>
-          </Select>
-        </FormItem>
-        <FormItem label="To" className="gx-form-item-one-fourth">
-          <Select defaultValue="BTC" onChange={handleChange}>
-            <Option value="jack">BTC</Option>
-            <Option value="lucy">USD</Option>
-          </Select>
-        </FormItem>
-        <FormItem label="Amount (BTC)" className="gx-form-item-two-fourth">
-          <Input placeholder="0.0" />
-        </FormItem>
-        <FormItem className="gx-d-block gx-mb-1 gx-mt-1">
-          <Button className="gx-mb-0" type="primary">
-            Transfer Now
-          </Button>
-        </FormItem>
-      </Form>
+      <Table className="gx-table-responsive" columns={columns} dataSource={data} />
     </Widget>
   );
 };

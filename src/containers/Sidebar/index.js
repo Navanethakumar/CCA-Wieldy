@@ -55,9 +55,8 @@ const Sidebar = () => {
 
   return (
     <Sider
-      className={`gx-app-sidebar ${drawerStyle} ${
-        themeType !== THEME_TYPE_LITE ? "gx-layout-sider-dark" : null
-      }`}
+      className={`gx-app-sidebar ${drawerStyle} ${themeType !== THEME_TYPE_LITE ? "gx-layout-sider-dark" : null
+        }`}
       trigger={null}
       collapsed={
         width < TAB_SIZE
@@ -69,9 +68,8 @@ const Sidebar = () => {
     >
       {navStyle === NAV_STYLE_DRAWER || width < TAB_SIZE ? (
         <Drawer
-          className={`gx-drawer-sidebar ${
-            themeType !== THEME_TYPE_LITE ? "gx-drawer-sidebar-dark" : null
-          }`}
+          className={`gx-drawer-sidebar ${themeType !== THEME_TYPE_LITE ? "gx-drawer-sidebar-dark" : null
+            }`}
           placement="left"
           closable={false}
           onClose={onToggleCollapsedNav}

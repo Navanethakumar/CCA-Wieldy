@@ -1,6 +1,6 @@
 import React from "react";
-import {useSelector} from "react-redux";
-import {Link} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   NAV_STYLE_DRAWER,
   NAV_STYLE_FIXED,
@@ -11,9 +11,9 @@ import {
 } from "../../constants/ThemeSetting";
 
 
-const SidebarLogo = ({sidebarCollapsed, setSidebarCollapsed}) => {
-  const {width, themeType} = useSelector(({settings}) => settings);
-  let navStyle = useSelector(({settings}) => settings.navStyle);
+const SidebarLogo = ({ sidebarCollapsed, setSidebarCollapsed }) => {
+  const { width, themeType } = useSelector(({ settings }) => settings);
+  let navStyle = useSelector(({ settings }) => settings.navStyle);
   if (width < TAB_SIZE && navStyle === NAV_STYLE_FIXED) {
     navStyle = NAV_STYLE_DRAWER;
   }
@@ -30,10 +30,10 @@ const SidebarLogo = ({sidebarCollapsed, setSidebarCollapsed}) => {
 
       <Link to="/" className="gx-site-logo">
         {navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR && width >= TAB_SIZE ?
-          <img alt="lo" src={("/assets/images/w-logo.png")}/> :
+          <img alt="lo" src={("/assets/images/w-logo.png")} /> :
           themeType === THEME_TYPE_LITE ?
-            <img alt="logo1" src={("/assets/images/logo-white.png")}/> :
-            <img alt="logo2" src={("/assets/images/logo.png")}/>}
+            <img alt="logo1" src={("/assets/images/logo-white.png")} /> :
+            <img alt="logo2" src={("/assets/images/logo.png")} />}
       </Link>
     </div>
   );

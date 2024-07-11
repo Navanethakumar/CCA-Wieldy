@@ -87,7 +87,7 @@ const ColumnWithRotatedSeries = () => {
   };
   return (
     <div className="App">
-      <AmCharts.React style={{width: "100%", height: "500px"}} options={config}/>
+      <AmCharts.React style={{ width: "100%", height: "300px" }} options={config} />
     </div>
   )
 }
