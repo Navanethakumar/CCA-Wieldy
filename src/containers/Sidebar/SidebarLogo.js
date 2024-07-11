@@ -22,9 +22,9 @@ const SidebarLogo = ({ sidebarCollapsed, setSidebarCollapsed }) => {
       {(navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR) ? <div className="gx-linebar">
         <i
           className={`gx-icon-btn icon icon-${!sidebarCollapsed ? 'menu-unfold' : 'menu-fold'} ${themeType !== THEME_TYPE_LITE ? 'gx-text-white' : ''}`}
-          onClick={() => {
-            setSidebarCollapsed(!sidebarCollapsed)
-          }}
+          // onClick={() => {
+          //   setSidebarCollapsed(!sidebarCollapsed)
+          // }}
         />
       </div> : null}
 

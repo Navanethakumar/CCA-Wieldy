@@ -17,7 +17,7 @@ import {
 const { Sider } = Layout;
 
 const Sidebar = () => {
-  let [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  let [sidebarCollapsed, setSidebarCollapsed] = useState(true);
   const { themeType, navStyle } = useSelector(({ settings }) => settings);
   const navCollapsed = useSelector(({ common }) => common.navCollapsed);
   const width = useSelector(({ common }) => common.width);
@@ -27,9 +27,9 @@ const Sidebar = () => {
     dispatch(toggleCollapsedSideNav(!navCollapsed));
   };
 
-  useEffect(() => {
-    setSidebarCollapsed(navStyle === NAV_STYLE_MINI_SIDEBAR);
-  }, [navStyle]);
+  // useEffect(() => {
+  //   setSidebarCollapsed(navStyle === NAV_STYLE_MINI_SIDEBAR);
+  // }, [navStyle]);
 
   let drawerStyle = "gx-collapsed-sidebar";
 

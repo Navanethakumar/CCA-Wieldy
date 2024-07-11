@@ -10,6 +10,7 @@ import UserInfo from "../../components/UserInfo";
 import AppNotification from "../../components/AppNotification";
 import MailNotification from "../../components/MailNotification";
 import Auxiliary from "util/Auxiliary";
+import UserProfile from "../Sidebar/UserProfile.js";
 
 
 import { NAV_STYLE_DRAWER, NAV_STYLE_FIXED, NAV_STYLE_MINI_SIDEBAR, TAB_SIZE } from "../../constants/ThemeSetting";
@@ -100,11 +101,13 @@ const Topbar = () => {
                 </span>
           </Popover>
         </li> */}
-        {width >= TAB_SIZE ? null :
-          <Auxiliary>
-            <li className="gx-user-nav"><UserInfo /></li>
-          </Auxiliary>
-        }
+          <div
+            className="gx-user-nav"
+            // className={`gx-sidebar-notifications ${getNoHeaderClass(navStyle)}`}
+          >
+            <UserProfile />
+          </div>
+        {/* } */}
       </ul>
     </Header>
   );

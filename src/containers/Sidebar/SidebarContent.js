@@ -47,12 +47,12 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
         setSidebarCollapsed={setSidebarCollapsed}
       />
       <div className="gx-sidebar-content">
-        <div
+        {/* <div
           className={`gx-sidebar-notifications ${getNoHeaderClass(navStyle)}`}
         >
           <UserProfile />
           <AppsNavigation />
-        </div>
+        </div> */}
         <CustomScrollbars className="gx-layout-sider-scrollbar">
           <Menu
             defaultOpenKeys={[defaultOpenKeys]}
