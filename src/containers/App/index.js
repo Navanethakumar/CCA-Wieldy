@@ -22,19 +22,13 @@ import {
   NAV_STYLE_DEFAULT_HORIZONTAL,
   NAV_STYLE_INSIDE_HEADER_HORIZONTAL, THEME_TYPE_DARK
 } from "../../constants/ThemeSetting";
+import Dashboard from "../../routes/main/dashboard";
+import Crypto from "../../routes/main/dashboard/Crypto";
 
 const RestrictedRoute = ({ component: Component, location, authUser, ...rest }) =>
   <Route
     {...rest}
-    render={props =>
-      authUser
-        ? <Component {...props} />
-        : <Redirect
-          to={{
-            pathname: '/signin',
-            state: { from: location }
-          }}
-        />}
+    render={props => <Component {...props} />}
   />;
 
 const setLayoutType = (layoutType) => {
@@ -139,17 +133,17 @@ const App = () => {
   }, [layoutType, navStyle]);
 
   useEffect(() => {
-    if (location.pathname === '/') {
-      // if (authUser === null) {
-      //   history.push('/signin');
-      // } else if (initURL === '' || initURL === '/' || initURL === '/signin') {
-      //   history.push('/main/dashboard/crypto');
-      // } else {
-      //   history.push(initURL);
-      // }
-      history.push('/main/dashboard/crypto');
-    }
-  }, [authUser, initURL, location, history]);
+    // if (location.pathname === '/') {
+    // if (authUser === null) {
+    //   history.push('/signin');
+    // } else if (initURL === '' || initURL === '/' || initURL === '/signin') {
+    //   history.push('/main/dashboard/crypto');
+    // } else {
+    //   history.push(initURL);
+    // }
+    // }
+    history.push('/dashboard');
+  }, []);
 
   const currentAppLocale = AppLocale[locale.locale];
 
@@ -162,8 +156,10 @@ const App = () => {
         <Switch>
           {/* <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/> */}
-          <RestrictedRoute path={`${match.url}`} authUser={authUser} location={location}
+          <RestrictedRoute path={`${match.url}`} location={location}
             component={MainApp} />
+          {/* <Route path={`/dashboard`} component={Dashboard} /> */}
+          <Route path={`/dashboard`} component={Crypto} />
         </Switch>
       </IntlProvider>
     </ConfigProvider>
