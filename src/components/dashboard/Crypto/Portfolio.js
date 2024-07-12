@@ -6,23 +6,23 @@ import Icon from "@ant-design/icons";
 const Portfolio = () => {
   const columns = [
     {
-      title: "Name",
+      title: "Service Category",
       dataIndex: "name",
       key: "name",
       render: (text) => <span className="gx-link">{text}</span>,
     },
     {
-      title: "Age",
+      title: "Total Calls",
       dataIndex: "age",
       key: "age",
     },
     {
-      title: "Address",
+      title: "Total Duration",
       dataIndex: "address",
       key: "address",
     },
     {
-      title: "Action",
+      title: "Calls%",
       key: "action",
       dataIndex: "action",
     },
@@ -56,7 +56,7 @@ const Portfolio = () => {
       name: "More Than 40 Seconds",
       age: 3933,
       address: "7d:7h:30m",
-      action: ".33",
+      action: "36.33",
     },
   ];
   return (

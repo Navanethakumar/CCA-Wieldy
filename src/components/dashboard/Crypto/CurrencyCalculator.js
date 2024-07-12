@@ -66,6 +66,7 @@ const CurrencyCalculator = () => {
         className="gx-table-responsive"
         columns={columns}
         dataSource={data}
+        pagination={false}
       />
     </Widget>
   );
