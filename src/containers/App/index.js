@@ -49,7 +49,7 @@ const RestrictedRoute = ({
       ) : (
         <Redirect
           to={{
-            pathname: "/signin",
+            pathname: "/main/dashboard/crypto",
             state: { from: location },
           }}
         />
