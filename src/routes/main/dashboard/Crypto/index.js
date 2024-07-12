@@ -173,13 +173,14 @@ const Crypto = () => {
         </Col>
 
         <Col xl={12} lg={24} md={24} sm={24} xs={24}>
-          <SendMoney />
+          {" "}
+          <CurrencyCalculator />
         </Col>
         {/* <Col xl={6} lg={12} md={12} sm={24} xs={24}>
           <RewardCard/>
         </Col> */}
         <Col xl={12} lg={12} md={12} sm={24} xs={24}>
-          <CurrencyCalculator />
+          <SendMoney />
         </Col>
 
         <Col xl={24} lg={24} md={24} sm={24} xs={24}>
