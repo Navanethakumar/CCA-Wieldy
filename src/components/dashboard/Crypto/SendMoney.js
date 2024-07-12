@@ -31,7 +31,7 @@ const columns = [
   },
   {
     title: "Avg Sentiment Score",
-    key: "Avg Sentiment Score",
+    key: "AvgSentimentScore",
     dataIndex: "Avg Sentiment Score",
   },
 ];
@@ -44,6 +44,7 @@ const data = [
     address: "2d:3h:18m",
     action: "7.33",
     fcr: "85.65",
+    AvgSentimentScore: "2",
   },
   {
     key: "2",
@@ -52,6 +53,7 @@ const data = [
     address: "15d:17h:35m",
     action: "46.22",
     fcr: "92",
+    AvgSentimentScore: "5",
   },
 ];
 

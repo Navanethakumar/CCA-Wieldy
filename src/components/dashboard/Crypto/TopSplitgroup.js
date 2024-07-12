@@ -26,24 +26,41 @@ export const TopSplitgroup = () => {
     { name: "BSD_INQ_BILL", uv: 3490, Call_Count: 560, amt: 560 },
   ];
   return (
-    <Card className="gx-card" title="Top 10 Split Group">
+    <Card
+      className="gx-card"
+      style={{ marginBottom: "50px" }}
+      title="Top 10 Split Group"
+    >
       <ResponsiveContainer width="100%" height={300}>
-        <LineChart
-          data={data}
-          margin={{ top: 0, right: 10, bottom: 80, left: 20 }}
-        >
-          <XAxis dataKey="name" angle={-40} textAnchor="end" />
-          <YAxis dataKey="amt" />
-          {/* <CartesianGrid strokeDasharray="3 3" /> */}
-          <Tooltip />
-          <Legend verticalAlign="Top" />
-          <Line
-            dataKey="Call_Count"
-            stroke="#038FDE"
-            dot={{ stroke: "#FEA931", strokeWidth: 4 }}
-          />
-          {/* <Bar dataKey="uv" fill="#FE9E15" /> */}
-        </LineChart>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart
+            data={data}
+            margin={{ top: 0, right: 0, left: 20, bottom: 110 }}
+          >
+            <XAxis interval={0} angle={-45} textAnchor="end" dataKey="name" />
+            <YAxis dataKey="Call_Count" />
+            <Tooltip />
+            <Legend verticalAlign="top" />
+            <defs>
+              <linearGradient
+                id="lightPurpleGradient"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+              >
+                <stop offset="5%" stopColor="#d3a4ff" stopOpacity="1" />
+                <stop offset="95%" stopColor="#e0b3ff" stopOpacity="1" />
+              </linearGradient>
+            </defs>
+            <Bar
+              dataKey="Call_Count"
+              fill="url(#lightPurpleGradient)"
+              barSize={30}
+              radius={5}
+            />
+          </BarChart>
+        </ResponsiveContainer>
       </ResponsiveContainer>
     </Card>
   );

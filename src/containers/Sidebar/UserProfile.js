@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Avatar, Popover } from "antd";
 import { userSignOut } from "appRedux/actions/Auth";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
+  const [state, setstate] = useState("Jones, Miller");
+  const changeuser = (e) => {
+    console.log(e);
+    setstate(e);
+  };
   const userMenuOptions = (
     <ul className="gx-user-popover">
-      <li>Adam, Billi</li>
-      <li>Gower, pamela</li>
-      <li>Jones, Miller</li>
+      <li onClick={() => changeuser("Adam, Billi")}>Adam, Billi</li>
+      <li onClick={() => changeuser("Gower, pamela")}>Gower, pamela</li>
+      <li onClick={() => changeuser("Jones, Miller")}>Jones, Miller</li>
     </ul>
   );
 
@@ -26,7 +31,7 @@ const UserProfile = () => {
           alt=""
         />
         <span className="gx-avatar-name">
-          Jones, Miller
+          {state}
           <i className="icon icon-chevron-down gx-fs-xxs gx-ml-2" />
         </span>
       </Popover>

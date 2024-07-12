@@ -24,8 +24,13 @@ const TinyBarChart = () => (
           <stop offset="5%" stopColor="#23DFDC" stopOpacity={0.9} />
           <stop offset="95%" stopColor="#63AEE4" stopOpacity={0.9} />
         </linearGradient>
+        <linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#5cb85c" stopOpacity="1" />
+          <stop offset="95%" stopColor="#5bc0de" stopOpacity="1" />
+        </linearGradient>
       </defs>
       <Bar dataKey="Call_Count" fill="url(#color09)" barSize={30} radius={5} />
+      <Bar dataKey="price" fill="url(#greenGradient)" barSize={30} radius={5} />
     </BarChart>
   </ResponsiveContainer>
 );

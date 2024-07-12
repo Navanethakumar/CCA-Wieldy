@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import { increamentData, lineData } from "../../Metrics/data";
 import ChartCard from "components/dashboard/Crypto/ChartCard";
+import Widget from "../../../../components/Widget";
 import Auxiliary from "util/Auxiliary";
 import Portfolio from "components/dashboard/Crypto/Portfolio";
 import BalanceHistory from "components/dashboard/Crypto/BalanceHistory";
@@ -24,6 +25,7 @@ import { TopAnomaly } from "./TopAnomaly";
 import { BottomAnomaly } from "./BottomAnomaly";
 import { TopSplitgroup } from "../../../../components/dashboard/Crypto/TopSplitgroup";
 import { Disposition } from "../../../../components/dashboard/Crypto/Disposition";
+import Heatmap from "./heatmap";
 
 const Crypto = () => {
   return (
@@ -68,7 +70,7 @@ const Crypto = () => {
         </Col>
         <Col xl={6} lg={12} md={12} sm={12} xs={24}>
           <ChartCard
-            prize="9427 (90.25%)"
+            prize="90.25%"
             title="07"
             icon="etherium"
             children={
@@ -106,7 +108,7 @@ const Crypto = () => {
         </Col>
         <Col xl={6} lg={12} md={12} sm={12} xs={24}>
           <ChartCard
-            prize="3442 (32.95%)"
+            prize="32.95%"
             title="08"
             icon="ripple"
             children={
@@ -143,7 +145,7 @@ const Crypto = () => {
         </Col>
         <Col xl={6} lg={12} md={12} sm={12} xs={24}>
           <ChartCard
-            prize="3541 (33.9%)"
+            prize="33.9%"
             title="47"
             icon="litcoin"
             children={
@@ -162,11 +164,116 @@ const Crypto = () => {
               </ResponsiveContainer>
             }
             styleName="down"
-            desc="Conference/Warm"
+            desc="Satisfaction Score"
           />
         </Col>
         <Col xl={12} lg={24} md={12} sm={24} xs={24}>
-          <Portfolio />
+          {/* <Portfolio /> */}
+          <Row>
+            <Col span={12}>
+              <ChartCard
+                prize="72%"
+                title="09"
+                icon="ripple"
+                children={
+                  <ResponsiveContainer width="100%" height={75}>
+                    <AreaChart
+                      data={increamentData}
+                      margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+                    >
+                      <Tooltip />
+                      <defs>
+                        <linearGradient
+                          id="lightPurpleGradient"
+                          x1="0"
+                          y1="0"
+                          x2="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="5%"
+                            stopColor="#d3a4ff"
+                            stopOpacity="1"
+                          />
+                          <stop
+                            offset="95%"
+                            stopColor="#e0b3ff"
+                            stopOpacity="1"
+                          />
+                        </linearGradient>
+                      </defs>
+                      <Area
+                        dataKey="price"
+                        type="monotone"
+                        strokeWidth={0}
+                        stackId="2"
+                        stroke="#4D95F3"
+                        fill="url(#lightPurpleGradient)"
+                        fillOpacity={1}
+                      />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                }
+                styleName="up"
+                desc="Service Level"
+              />
+            </Col>
+            <Col span={12}>
+              <ChartCard
+                prize="90.25%"
+                title="07"
+                icon="litcoin"
+                children={
+                  <ResponsiveContainer width="100%" height={75}>
+                    <AreaChart
+                      data={increamentData}
+                      margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+                    >
+                      <Tooltip />
+                      <defs>
+                        <linearGradient
+                          id="pastelGradient"
+                          x1="0"
+                          y1="0"
+                          x2="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="5%"
+                            stopColor="#ffecd2"
+                            stopOpacity="1"
+                          />
+                          <stop
+                            offset="95%"
+                            stopColor="#fcb69f"
+                            stopOpacity="1"
+                          />
+                        </linearGradient>
+                      </defs>
+                      <Area
+                        dataKey="price"
+                        type="monotone"
+                        strokeWidth={0}
+                        stackId="2"
+                        stroke="#006400"
+                        fill="url(#pastelGradient)"
+                        fillOpacity={1}
+                      />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                }
+                styleName="up"
+                desc="Queue"
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={24}>
+              <Widget title={"Treemap"}>
+                <Heatmap />
+              </Widget>
+            </Col>
+          </Row>
         </Col>
         <Col xl={12} lg={24} md={12} sm={24} xs={24}>
           <BalanceHistory />
@@ -184,7 +291,7 @@ const Crypto = () => {
         </Col>
 
         <Col xl={24} lg={24} md={24} sm={24} xs={24}>
-          <CryptoNews />
+          {/* <CryptoNews /> */}
         </Col>
         {/* <Col xl={9} lg={24} md={24} sm={24} xs={24}>
           <DownloadMobileApps />

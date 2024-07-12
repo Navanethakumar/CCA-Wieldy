@@ -33,8 +33,15 @@ const SimplePieChart = () => {
       fixedPosition: true,
     },
     export: {
-      enabled: true,
+      enabled: false,
     },
+    legend: {
+      enabled: true,
+      position: "right",
+      markerType: "circle",
+    },
+    labelsEnabled: false,
+    labelRadius: -40, // This will hide the pie chart values
   };
 
   return (
