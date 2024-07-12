@@ -16,7 +16,7 @@ const TinyBarChart = () => (
   <ResponsiveContainer width="100%" height={300}>
     <BarChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
       <XAxis dataKey="name" />
-      <YAxis dataKey="amt" />
+      <YAxis dataKey="Talk Duration" />
       <Tooltip />
       <Legend verticalAlign="top" />
       <defs>
@@ -29,8 +29,8 @@ const TinyBarChart = () => (
           <stop offset="95%" stopColor="#5bc0de" stopOpacity="1" />
         </linearGradient>
       </defs>
-      <Bar dataKey="Call_Count" fill="url(#color09)" barSize={30} radius={5} />
-      <Bar dataKey="price" fill="url(#greenGradient)" barSize={30} radius={5} />
+      <Bar dataKey="Talk Duration" fill="url(#color09)" barSize={30} radius={5} />
+      <Bar dataKey="Queue Time" fill="url(#greenGradient)" barSize={30} radius={5} />
     </BarChart>
   </ResponsiveContainer>
 );

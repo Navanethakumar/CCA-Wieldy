@@ -4,7 +4,7 @@ import TinyBarChart from "../../../extensions/charts/recharts/bar/Components/Tin
 
 export const BottomAnomaly = () => {
   return (
-    <Card className="gx-card" title="Bottom 5 Volume Anomaly">
+    <Card className="gx-card" title="Top 5 Queue Time Anomaly">
       <TinyBarChart />
     </Card>
   );

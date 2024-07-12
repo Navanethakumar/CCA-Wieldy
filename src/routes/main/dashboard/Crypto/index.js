@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row } from "antd";
+import { Card, Col, Row } from "antd";
 
 import {
   Area,
@@ -263,13 +263,14 @@ const Crypto = () => {
                   </ResponsiveContainer>
                 }
                 styleName="up"
-                desc="Queue"
+                desc="Queue Time"
               />
             </Col>
           </Row>
           <Row>
             <Col span={24}>
-              <Widget title={"Treemap"}>
+              <Widget>
+                <h2 className="h4 gx-mb-3">Key Call Topics</h2>
                 <Heatmap />
               </Widget>
             </Col>

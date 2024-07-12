@@ -6,8 +6,7 @@ export const TopAnomaly = () => {
   return (
     <Card
       className="gx-card"
-      title="
-Top 5 Volume Anomaly"
+      title="Top 5 Talk Duration Anomaly"
     >
       <ColumnWithRotatedSeries />
     </Card>

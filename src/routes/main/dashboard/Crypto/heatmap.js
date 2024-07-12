@@ -34,7 +34,7 @@ const CustomizedContent = ({
         y={y}
         width={width}
         height={height}
-        style={{ fill: fill, stroke: "#fff", strokeWidth: 2 }}
+        style={{ fill: fill, stroke: "#fff", strokeWidth: 1 }}
       />
       <text
         x={x + width / 2}

@@ -6,14 +6,23 @@ import { userSignOut } from "appRedux/actions/Auth";
 const UserProfile = () => {
   const dispatch = useDispatch();
   const [state, setstate] = useState("Jones, Miller");
+  const [initial, setInitial] = useState('JM')
   const changeuser = (e) => {
-    console.log(e);
     setstate(e);
+    if (e === 'Adam, Billi') {
+      setInitial('AB')
+    }
+    else if (e === 'Gower, Pamela') {
+      setInitial('GP')
+    }
+    else if (e === 'Jones, Miller') {
+      setInitial('JM')
+    }
   };
   const userMenuOptions = (
     <ul className="gx-user-popover">
       <li onClick={() => changeuser("Adam, Billi")}>Adam, Billi</li>
-      <li onClick={() => changeuser("Gower, pamela")}>Gower, pamela</li>
+      <li onClick={() => changeuser("Gower, Pamela")}>Gower, Pamela</li>
       <li onClick={() => changeuser("Jones, Miller")}>Jones, Miller</li>
     </ul>
   );
@@ -26,10 +35,11 @@ const UserProfile = () => {
         trigger="click"
       >
         <Avatar
-          src={"https://via.placeholder.com/150"}
+          style={{
+            color: 'black'
+          }}
           className="gx-size-40 gx-pointer gx-mr-3"
-          alt=""
-        />
+        >{initial}</Avatar>
         <span className="gx-avatar-name">
           {state}
           <i className="icon icon-chevron-down gx-fs-xxs gx-ml-2" />

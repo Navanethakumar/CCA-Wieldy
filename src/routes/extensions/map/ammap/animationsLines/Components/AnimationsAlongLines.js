@@ -20,7 +20,7 @@ export default class App extends Component {
       [46.808327, -100.783737],
       [37.0902, -95.7129],
     ],
-    zoom: 4,
+    zoom: 3,
   };
   render() {
     return (

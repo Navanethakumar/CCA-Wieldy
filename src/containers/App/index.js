@@ -1,16 +1,16 @@
-import React, {memo, useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, { memo, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import URLSearchParams from 'url-search-params'
-import {Redirect, Route, Switch, useHistory, useLocation, useRouteMatch} from "react-router-dom";
-import {ConfigProvider} from 'antd';
-import {IntlProvider} from "react-intl";
+import { Redirect, Route, Switch, useHistory, useLocation, useRouteMatch } from "react-router-dom";
+import { ConfigProvider } from 'antd';
+import { IntlProvider } from "react-intl";
 
 import AppLocale from "lngProvider";
 import MainApp from "./MainApp";
 import SignIn from "../SignIn";
 import SignUp from "../SignUp";
-import {setInitUrl} from "appRedux/actions/Auth";
-import {onLayoutTypeChange, onNavStyleChange, setThemeType} from "appRedux/actions/Setting";
+import { setInitUrl } from "appRedux/actions/Auth";
+import { onLayoutTypeChange, onNavStyleChange, setThemeType } from "appRedux/actions/Setting";
 
 import {
   LAYOUT_TYPE_BOXED,
@@ -23,7 +23,7 @@ import {
   NAV_STYLE_INSIDE_HEADER_HORIZONTAL, THEME_TYPE_DARK
 } from "../../constants/ThemeSetting";
 
-const RestrictedRoute = ({component: Component, location, authUser, ...rest}) =>
+const RestrictedRoute = ({ component: Component, location, authUser, ...rest }) =>
   <Route
     {...rest}
     render={props =>
@@ -32,7 +32,7 @@ const RestrictedRoute = ({component: Component, location, authUser, ...rest}) =>
         : <Redirect
           to={{
             pathname: '/signin',
-            state: {from: location}
+            state: { from: location }
           }}
         />}
   />;
@@ -73,15 +73,15 @@ styleSheetLink.rel = 'stylesheet';
 document.body.appendChild(styleSheetLink);
 
 const App = () => {
-  const locale = useSelector(({settings}) => settings.locale);
-  const navStyle = useSelector(({settings}) => settings.navStyle);
-  const layoutType = useSelector(({settings}) => settings.layoutType);
-  const themeColor = useSelector(({settings}) => settings.themeColor);
-  const themeType = useSelector(({settings}) => settings.themeType);
-  const isDirectionRTL = useSelector(({settings}) => settings.isDirectionRTL);
+  const locale = useSelector(({ settings }) => settings.locale);
+  const navStyle = useSelector(({ settings }) => settings.navStyle);
+  const layoutType = useSelector(({ settings }) => settings.layoutType);
+  const themeColor = useSelector(({ settings }) => settings.themeColor);
+  const themeType = useSelector(({ settings }) => settings.themeType);
+  const isDirectionRTL = useSelector(({ settings }) => settings.isDirectionRTL);
 
   const dispatch = useDispatch();
-  const {authUser, initURL} = useSelector(({auth}) => auth);
+  const { authUser, initURL } = useSelector(({ auth }) => auth);
 
   const location = useLocation();
   const history = useHistory();
@@ -140,13 +140,14 @@ const App = () => {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      if (authUser === null) {
-        history.push('/signin');
-      } else if (initURL === '' || initURL === '/' || initURL === '/signin') {
-        history.push('/main/dashboard/crypto');
-      } else {
-        history.push(initURL);
-      }
+      // if (authUser === null) {
+      //   history.push('/signin');
+      // } else if (initURL === '' || initURL === '/' || initURL === '/signin') {
+      //   history.push('/main/dashboard/crypto');
+      // } else {
+      //   history.push(initURL);
+      // }
+      history.push('/main/dashboard/crypto');
     }
   }, [authUser, initURL, location, history]);
 
@@ -159,10 +160,10 @@ const App = () => {
         messages={currentAppLocale.messages}>
 
         <Switch>
-          <Route exact path='/signin' component={SignIn}/>
-          <Route exact path='/signup' component={SignUp}/>
+          {/* <Route exact path='/signin' component={SignIn}/>
+          <Route exact path='/signup' component={SignUp}/> */}
           <RestrictedRoute path={`${match.url}`} authUser={authUser} location={location}
-                           component={MainApp}/>
+            component={MainApp} />
         </Switch>
       </IntlProvider>
     </ConfigProvider>

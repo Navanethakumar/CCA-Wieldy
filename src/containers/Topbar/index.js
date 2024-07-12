@@ -52,8 +52,8 @@ const Topbar = () => {
   return (
     <Header>
       {navStyle === NAV_STYLE_DRAWER ||
-      ((navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR) &&
-        width < TAB_SIZE) ? (
+        ((navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR) &&
+          width < TAB_SIZE) ? (
         <div className="gx-linebar gx-mr-3">
           <i
             className="gx-icon-btn icon icon-menu"
@@ -71,6 +71,7 @@ const Topbar = () => {
         placeholder="Search in app..."
         onChange={updateSearchChatUser}
         value={searchText} /> */}
+      <h1>Customer Care Analytics</h1>
       <ul className="gx-header-notifications gx-ml-auto">
         {/* <li className="gx-notify gx-notify-search gx-d-inline-block gx-d-lg-none">
           <Popover
@@ -133,7 +134,7 @@ const Topbar = () => {
         </li> */}
         <div
           className="gx-user-nav"
-          // className={`gx-sidebar-notifications ${getNoHeaderClass(navStyle)}`}
+        // className={`gx-sidebar-notifications ${getNoHeaderClass(navStyle)}`}
         >
           <UserProfile />
         </div>
