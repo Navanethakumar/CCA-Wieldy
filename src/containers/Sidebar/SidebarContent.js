@@ -65,7 +65,7 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
               className="gx-menu-group"
               title={<IntlMessages id="sidebar.main" />}
             >
-              <SubMenu
+              {/* <SubMenu
                 key="dashboard"
                 popupClassName={getNavStyleSubMenuClass(navStyle)}
                 title={
@@ -77,16 +77,16 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                     </span>
                   </span>
                 }
-              >
-                <Menu.Item key="main/dashboard/crypto">
-                  <Link to="/main/dashboard/crypto">
-                    <i className="icon icon-crypto" />
-                    <span>
-                      <IntlMessages id="sidebar.dashboard.crypto" />
-                    </span>
-                  </Link>
-                </Menu.Item>
-                {/* <Menu.Item key="main/dashboard/crm">
+              > */}
+              <Menu.Item key="dashboard">
+                <Link to="/dashboard">
+                  <i className="icon icon-crypto" />
+                  <span>
+                    <IntlMessages id="sidebar.dashboard.crypto" />
+                  </span>
+                </Link>
+              </Menu.Item>
+              {/* <Menu.Item key="main/dashboard/crm">
                   <Link to="/main/dashboard/crm">
                     <i className="icon icon-crm" />
                     <span>
@@ -102,7 +102,7 @@ const SidebarContent = ({ sidebarCollapsed, setSidebarCollapsed }) => {
                     </span>
                   </Link>
                 </Menu.Item> */}
-              </SubMenu>
+              {/* </SubMenu> */}
 
               {/* <Menu.Item key="main/widgets">
                 <Link to="/main/widgets">

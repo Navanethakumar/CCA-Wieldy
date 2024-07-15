@@ -34,6 +34,8 @@ import {
   NAV_STYLE_INSIDE_HEADER_HORIZONTAL,
   THEME_TYPE_DARK,
 } from "../../constants/ThemeSetting";
+import Dashboard from "../../routes/main/dashboard";
+import Crypto from "../../routes/main/dashboard/Crypto";
 
 const RestrictedRoute = ({
   component: Component,
@@ -43,20 +45,9 @@ const RestrictedRoute = ({
 }) => (
   <Route
     {...rest}
-    render={(props) =>
-      authUser ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: "/main/dashboard/crypto",
-            state: { from: location },
-          }}
-        />
-      )
-    }
+    render={props => <Component {...props} />}
   />
-);
+)
 
 const setLayoutType = (layoutType) => {
   if (layoutType === LAYOUT_TYPE_FULL) {
@@ -161,17 +152,17 @@ const App = () => {
   }, [layoutType, navStyle]);
 
   useEffect(() => {
-    if (location.pathname === "/") {
-      // if (authUser === null) {
-      //   history.push('/signin');
-      // } else if (initURL === '' || initURL === '/' || initURL === '/signin') {
-      //   history.push('/main/dashboard/crypto');
-      // } else {
-      //   history.push(initURL);
-      // }
-      history.push("/main/dashboard/crypto");
-    }
-  }, [authUser, initURL, location, history]);
+    // if (location.pathname === '/') {
+    // if (authUser === null) {
+    //   history.push('/signin');
+    // } else if (initURL === '' || initURL === '/' || initURL === '/signin') {
+    //   history.push('/main/dashboard/crypto');
+    // } else {
+    //   history.push(initURL);
+    // }
+    // }
+    history.push('/dashboard');
+  }, []);
 
   const currentAppLocale = AppLocale[locale.locale];
 
@@ -187,12 +178,10 @@ const App = () => {
         <Switch>
           {/* <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/> */}
-          <Route
-            path={`${match.url}`}
-            // authUser={authUser}
-            location={location}
-            component={MainApp}
-          />
+          <RestrictedRoute path={`${match.url}`} location={location}
+            component={MainApp} />
+          {/* <Route path={`/dashboard`} component={Dashboard} /> */}
+          <Route path={`/dashboard`} component={Crypto} />
         </Switch>
       </IntlProvider>
     </ConfigProvider>
