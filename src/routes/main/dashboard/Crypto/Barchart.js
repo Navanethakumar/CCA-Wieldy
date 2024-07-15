@@ -6,6 +6,7 @@ import {
   Tooltip,
   Legend,
   Bar,
+  ResponsiveContainer,
 } from "recharts";
 
 const BarChartComponent = () => {
@@ -42,31 +43,35 @@ const BarChartComponent = () => {
     },
   ];
   return (
-    <BarChart
-      layout="vertical"
-      width={600}
-      height={250}
-      data={data}
-      margin={{
-        top: 0,
-        right: 20,
-        bottom: 20,
-        left: 40,
-      }}
-    >
-      {/* <CartesianGrid stroke="#f5f5f5" /> */}
-      <XAxis type="number" />
-      <YAxis dataKey="name" type="category" />
-      <defs>
-        <linearGradient id="color08" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="5%" stopColor="#23DFDC" stopOpacity={0.9} />
-          <stop offset="95%" stopColor="#63AEE4" stopOpacity={0.9} />
-        </linearGradient>
-      </defs>
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="pv" stackId="a" fill="url(#color08)" />
-    </BarChart>
+    <div className="App">
+      <ResponsiveContainer width={"100%"} height={250}>
+        <BarChart
+          layout="vertical"
+          width={600}
+          height={250}
+          data={data}
+          margin={{
+            top: 0,
+            right: 20,
+            bottom: 20,
+            left: 40,
+          }}
+        >
+          {/* <CartesianGrid stroke="#f5f5f5" /> */}
+          <XAxis type="number" />
+          <YAxis dataKey="name" type="category" />
+          <defs>
+            <linearGradient id="color08" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="5%" stopColor="#23DFDC" stopOpacity={0.9} />
+              <stop offset="95%" stopColor="#63AEE4" stopOpacity={0.9} />
+            </linearGradient>
+          </defs>
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="pv" stackId="a" fill="url(#color08)" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
