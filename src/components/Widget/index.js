@@ -2,7 +2,15 @@ import React from "react";
 import { Card } from "antd";
 import PropTypes from "prop-types";
 
-const Widget = ({ title, children, styleName, cover, extra, actions }) => {
+const Widget = ({
+  title,
+  children,
+  styleName,
+  cover,
+  extra,
+  actions,
+  height,
+}) => {
   return (
     <Card
       title={title}

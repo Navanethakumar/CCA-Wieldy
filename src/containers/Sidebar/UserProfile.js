@@ -1,24 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Avatar, Popover } from "antd";
 import { userSignOut } from "appRedux/actions/Auth";
+import { Userval } from "../../appRedux/actions/Contact";
 
 const UserProfile = () => {
   const dispatch = useDispatch();
   const [state, setstate] = useState("Jones, Miller");
-  const [initial, setInitial] = useState('JM')
+  const [initial, setInitial] = useState("JM");
+
   const changeuser = (e) => {
     setstate(e);
-    if (e === 'Adam, Billi') {
-      setInitial('AB')
-    }
-    else if (e === 'Gower, Pamela') {
-      setInitial('GP')
-    }
-    else if (e === 'Jones, Miller') {
-      setInitial('JM')
+    if (e === "Adam, Billi") {
+      setInitial("AB");
+      dispatch(Userval("AB"));
+    } else if (e === "Gower, Pamela") {
+      setInitial("GP");
+      dispatch(Userval("GP"));
+    } else if (e === "Jones, Miller") {
+      setInitial("JM");
+      dispatch(Userval("JM"));
     }
   };
+
   const userMenuOptions = (
     <ul className="gx-user-popover">
       <li onClick={() => changeuser("Adam, Billi")}>Adam, Billi</li>
@@ -36,10 +40,12 @@ const UserProfile = () => {
       >
         <Avatar
           style={{
-            color: 'black'
+            color: "black",
           }}
           className="gx-size-40 gx-pointer gx-mr-3"
-        >{initial}</Avatar>
+        >
+          {initial}
+        </Avatar>
         <span className="gx-avatar-name">
           {state}
           <i className="icon icon-chevron-down gx-fs-xxs gx-ml-2" />

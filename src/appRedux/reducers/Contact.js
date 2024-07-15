@@ -2,36 +2,37 @@ import {
   DELETE_CONTACT_SUCCESS,
   GET_All_CONTACT_SUCCESS,
   ON_ADD_CONTACT_SUCCESS,
-  UPDATE_CONTACT_SUCCESS
+  UPDATE_CONTACT_SUCCESS,
 } from "../../constants/ActionTypes";
 
 const INIT_STATE = {
   contactList: [],
-  selectedContact: []
+  selectedContact: [],
 };
-
 
 const ContactReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
-
-
     case GET_All_CONTACT_SUCCESS: {
       return {
         ...state,
         contactList: action.payload,
-      }
+      };
     }
 
     case UPDATE_CONTACT_SUCCESS:
       return {
         ...state,
-        contactList: state.contactList.map((contact) => contact.id === action.payload.id ? action.payload : contact),
+        contactList: state.contactList.map((contact) =>
+          contact.id === action.payload.id ? action.payload : contact
+        ),
       };
 
     case DELETE_CONTACT_SUCCESS:
       return {
         ...state,
-        contactList: state.contactList.filter((contact) => contact.id !== action.payload.id),
+        contactList: state.contactList.filter(
+          (contact) => contact.id !== action.payload.id
+        ),
       };
 
     case ON_ADD_CONTACT_SUCCESS:
@@ -43,6 +44,14 @@ const ContactReducer = (state = INIT_STATE, action) => {
     default:
       return state;
   }
-}
+};
 
 export default ContactReducer;
+export const UservalReducer = (state = "JM", action) => {
+  switch (action.type) {
+    case "Userval":
+      return action.payload;
+    default:
+      return state;
+  }
+};

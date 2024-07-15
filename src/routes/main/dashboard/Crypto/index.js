@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, Col, Row } from "antd";
 
 import {
@@ -26,8 +26,21 @@ import { BottomAnomaly } from "./BottomAnomaly";
 import { TopSplitgroup } from "../../../../components/dashboard/Crypto/TopSplitgroup";
 import { Disposition } from "../../../../components/dashboard/Crypto/Disposition";
 import Heatmap from "./heatmap";
+import Barchart from "./Barchart";
+import { useSelector } from "react-redux";
 
 const Crypto = () => {
+  const userval = useSelector((state) => state.Userval);
+  console.log(userval, "uv");
+  const data = [
+    { name: "Page A", pv: 240 },
+    { name: "B", pv: 2210 },
+    { name: "C", pv: 2300 },
+    { name: "Page D", pv: 2000 },
+    { name: "Zero", pv: 0 },
+    { name: "Hi", pv: 123 },
+    { name: "Bye", pv: 2091 },
+  ];
   return (
     <Auxiliary>
       <Row>
@@ -183,22 +196,16 @@ const Crypto = () => {
                     >
                       <Tooltip />
                       <defs>
-                        <linearGradient
-                          id="lightPurpleGradient"
-                          x1="0"
-                          y1="0"
-                          x2="0"
-                          y2="1"
-                        >
+                        <linearGradient id="color1" x1="0" y1="0" x2="1" y2="0">
                           <stop
                             offset="5%"
-                            stopColor="#d3a4ff"
-                            stopOpacity="1"
+                            stopColor="#FF55AA"
+                            stopOpacity={0.9}
                           />
                           <stop
                             offset="95%"
-                            stopColor="#e0b3ff"
-                            stopOpacity="1"
+                            stopColor="#E81D27"
+                            stopOpacity={0.9}
                           />
                         </linearGradient>
                       </defs>
@@ -208,7 +215,7 @@ const Crypto = () => {
                         strokeWidth={0}
                         stackId="2"
                         stroke="#4D95F3"
-                        fill="url(#lightPurpleGradient)"
+                        fill="url(#color1)"
                         fillOpacity={1}
                       />
                     </AreaChart>
@@ -231,22 +238,16 @@ const Crypto = () => {
                     >
                       <Tooltip />
                       <defs>
-                        <linearGradient
-                          id="pastelGradient"
-                          x1="0"
-                          y1="0"
-                          x2="0"
-                          y2="1"
-                        >
+                        <linearGradient id="color2" x1="0" y1="0" x2="1" y2="0">
                           <stop
                             offset="5%"
-                            stopColor="#ffecd2"
-                            stopOpacity="1"
+                            stopColor="#61B1E4"
+                            stopOpacity={0.9}
                           />
                           <stop
                             offset="95%"
-                            stopColor="#fcb69f"
-                            stopOpacity="1"
+                            stopColor="#867AE5"
+                            stopOpacity={0.9}
                           />
                         </linearGradient>
                       </defs>
@@ -256,7 +257,7 @@ const Crypto = () => {
                         strokeWidth={0}
                         stackId="2"
                         stroke="#006400"
-                        fill="url(#pastelGradient)"
+                        fill="url(#color2)"
                         fillOpacity={1}
                       />
                     </AreaChart>
@@ -269,10 +270,12 @@ const Crypto = () => {
           </Row>
           <Row>
             <Col span={24}>
-              <Widget>
+              <Card style={{ height: "300px" }}>
                 <h2 className="h4 gx-mb-3">Key Call Topics</h2>
-                <Heatmap />
-              </Widget>
+                {userval === "JM" ? <Barchart /> : <Heatmap />}
+
+                {/* <Heatmap /> */}
+              </Card>
             </Col>
           </Row>
         </Col>

@@ -13,11 +13,36 @@ import {
 } from "recharts";
 import TopSplitgroup from "./Linechart";
 const datas = [
-  { name: "Keiter, Malynne", "Talk Duration": 4000, "Queue Time": 2400, amt: 2400 },
-  { name: "Todd, Heather", "Talk Duration": 3000, "Queue Time": 1398, amt: 2210 },
-  { name: "Hanlon, Billi", "Talk Duration": 2000, "Queue Time": 2000, amt: 2290 },
-  { name: "Kiefer, Amanda", "Talk Duration": 2780, "Queue Time": 3908, amt: 2000 },
-  { name: "Morlock, Vema", "Talk Duration": 1890, "Queue Time": 4800, amt: 2181 },
+  {
+    name: "Keiter, Malynne",
+    "Talk Duration": 4000,
+    "Queue Time": 2400,
+    amt: 2400,
+  },
+  {
+    name: "Todd, Heather",
+    "Talk Duration": 3000,
+    "Queue Time": 1398,
+    amt: 2210,
+  },
+  {
+    name: "Hanlon, Billi",
+    "Talk Duration": 2000,
+    "Queue Time": 2000,
+    amt: 2290,
+  },
+  {
+    name: "Kiefer, Amanda",
+    "Talk Duration": 2780,
+    "Queue Time": 3908,
+    amt: 2000,
+  },
+  {
+    name: "Morlock, Vema",
+    "Talk Duration": 1890,
+    "Queue Time": 4800,
+    amt: 2181,
+  },
 ];
 
 const ColumnWithRotatedSeries = () => {
@@ -46,7 +71,7 @@ const ColumnWithRotatedSeries = () => {
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={datas}
-          margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+          margin={{ top: 30, right: 0, left: 0, bottom: 0 }}
         >
           <XAxis dataKey="name" />
           <YAxis dataKey="Talk Duration" />
